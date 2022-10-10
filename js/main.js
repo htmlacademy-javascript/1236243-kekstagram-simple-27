@@ -1,6 +1,6 @@
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random
 
-let getRandomNumber = function (min, max) {
+const GET_RANDOM_NUMBER = function (min, max) {
     if (min === max || min > max) {
         return NaN
     } else {
@@ -19,7 +19,7 @@ let getRandomNumber = function (min, max) {
     }
 }
 
-let commentLength = function (comment, maxLength) {
+const COMMENT_LENGTH = function (comment, maxLength) {
     if (comment.length <= maxLength) {
         return true
     } else {
