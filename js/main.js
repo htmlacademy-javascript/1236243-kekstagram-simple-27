@@ -20,8 +20,12 @@ const GET_RANDOM_NUMBER = function (min, max) {
 };
 
 const COMMENT_LENGTH = function (comment, maxLength) {
-  if (comment.length <= maxLength) {
-    return true;
+  if(typeof comment === 'string') {
+    if (comment.length <= maxLength) {
+      return true;
+    } else {
+      return false;
+    }
   } else {
     return false;
   }
