@@ -31,5 +31,47 @@ const COMMENT_LENGTH = function (comment, maxLength) {
   }
 };
 
-GET_RANDOM_NUMBER();
 COMMENT_LENGTH();
+
+const DESCRIPTION_ADVERB = [
+  'Невероятно',
+  'Восхитительно',
+  'Классно',
+  'Замечательно',
+  'Необычно',
+  'Странно'
+]
+
+const DESCRIPTION_VERB = [
+  'посидели',
+  'отдохнули',
+  'встретились',
+  'погуляли',
+  'поиграли',
+  'покатались',
+]
+
+let getRandomArrayElement = (elements) => {
+  return elements[GET_RANDOM_NUMBER(0, elements.length -1)]
+}
+  
+
+let createDescriptionFoto = (i) => {
+  return {   
+      id: i,
+      url: `photos/${i}.jpg`,
+      description: getRandomArrayElement(DESCRIPTION_ADVERB) + ' ' + getRandomArrayElement(DESCRIPTION_VERB),
+      likes: GET_RANDOM_NUMBER(15, 200),
+      comments: GET_RANDOM_NUMBER(0, 200),
+      }
+    }
+
+let getFotos = () => {
+  let arrayFotos = []
+  for (let i = 1; i <= 25; i++) {
+    arrayFotos.push(createDescriptionFoto(i))
+  }
+  return arrayFotos
+}
+
+console.log(getFotos())
