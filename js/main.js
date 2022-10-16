@@ -40,7 +40,7 @@ const DESCRIPTION_ADVERB = [
   'Замечательно',
   'Необычно',
   'Странно'
-]
+];
 
 const DESCRIPTION_VERB = [
   'посидели',
@@ -49,29 +49,25 @@ const DESCRIPTION_VERB = [
   'погуляли',
   'поиграли',
   'покатались',
-]
+];
 
-let getRandomArrayElement = (elements) => {
-  return elements[GET_RANDOM_NUMBER(0, elements.length -1)]
-}
-  
+const getRandomArrayElement = (elements) => elements[GET_RANDOM_NUMBER(0, elements.length - 1)];
 
-let createDescriptionFoto = (i) => {
-  return {   
-      id: i,
-      url: `photos/${i}.jpg`,
-      description: getRandomArrayElement(DESCRIPTION_ADVERB) + ' ' + getRandomArrayElement(DESCRIPTION_VERB),
-      likes: GET_RANDOM_NUMBER(15, 200),
-      comments: GET_RANDOM_NUMBER(0, 200),
-      }
-    }
 
-let getFotos = () => {
-  let arrayFotos = []
+const createDescriptionFoto = (i) => ({
+  id: i,
+  url: `photos/${i}.jpg`,
+  description: `${getRandomArrayElement(DESCRIPTION_ADVERB) } ${ getRandomArrayElement(DESCRIPTION_VERB)}`,
+  likes: GET_RANDOM_NUMBER(15, 200),
+  comments: GET_RANDOM_NUMBER(0, 200),
+});
+
+const getFotos = () => {
+  const arrayFotos = [];
   for (let i = 1; i <= 25; i++) {
-    arrayFotos.push(createDescriptionFoto(i))
+    arrayFotos.push(createDescriptionFoto(i));
   }
-  return arrayFotos
-}
+  return arrayFotos;
+};
 
-console.log(getFotos())
+getFotos();
