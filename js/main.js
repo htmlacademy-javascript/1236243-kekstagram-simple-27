@@ -1,5 +1,5 @@
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-
+const FOTOS = 25;
 const GET_RANDOM_NUMBER = function (min, max) {
   if (min === max || min > max) {
     return NaN;
@@ -20,15 +20,10 @@ const GET_RANDOM_NUMBER = function (min, max) {
 };
 
 const COMMENT_LENGTH = function (comment, maxLength) {
-  if(typeof comment === 'string') {
-    if (comment.length <= maxLength) {
-      return true;
-    } else {
-      return false;
-    }
-  } else {
-    return false;
+  if(typeof comment === 'string' && comment.length <= maxLength) {
+    return true;
   }
+  return false;
 };
 
 COMMENT_LENGTH();
@@ -54,20 +49,14 @@ const DESCRIPTION_VERB = [
 const getRandomArrayElement = (elements) => elements[GET_RANDOM_NUMBER(0, elements.length - 1)];
 
 
-const createDescriptionFoto = (i) => ({
-  id: i,
-  url: `photos/${i}.jpg`,
+const createDescriptionFoto = (index) => ({
+  id: index,
+  url: `photos/${index}.jpg`,
   description: `${getRandomArrayElement(DESCRIPTION_ADVERB) } ${ getRandomArrayElement(DESCRIPTION_VERB)}`,
   likes: GET_RANDOM_NUMBER(15, 200),
   comments: GET_RANDOM_NUMBER(0, 200),
 });
 
-const getFotos = () => {
-  const arrayFotos = [];
-  for (let i = 1; i <= 25; i++) {
-    arrayFotos.push(createDescriptionFoto(i));
-  }
-  return arrayFotos;
-};
+const getFotos = () => Array.from({ length: FOTOS }, (_, index) => createDescriptionFoto(index + 1));
 
 getFotos();
