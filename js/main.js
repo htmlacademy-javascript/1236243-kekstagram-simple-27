@@ -1,4 +1,5 @@
-import { GET_DESCRIPTION_FOTOS } from './util.js';
+import {getFotos} from './data.js';
 
-GET_DESCRIPTION_FOTOS();
+const DESCRIPTION_FOTOS = getFotos();
 
+export {DESCRIPTION_FOTOS}

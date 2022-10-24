@@ -1,5 +1,4 @@
-import {DESCRIPTION_VERB, DESCRIPTION_ADVERB} from './data.js';
-
+import {DESCRIPTION_ADVERB, DESCRIPTION_VERB} from './data.js';
 
 const GET_RANDOM_NUMBER = function (min, max) {
   if (min === max || min > max) {
@@ -21,37 +20,22 @@ const GET_RANDOM_NUMBER = function (min, max) {
 };
 
 const COMMENT_LENGTH = function (comment, maxLength) {
-  if(typeof comment === 'string') {
-    if (comment.length <= maxLength) {
-      return true;
-    } else {
-      return false;
-    }
+  if(typeof comment === 'string' && comment.length <= maxLength) {
+    return true;
   } else {
     return false;
   }
 };
 
-COMMENT_LENGTH();
-
 const getRandomArrayElement = (elements) => elements[GET_RANDOM_NUMBER(0, elements.length - 1)];
 
 
-const createDescriptionFoto = (i) => ({
-  id: i,
-  url: `photos/${i}.jpg`,
+const createDescriptionFoto = (index) => ({
+  id: index,
+  url: `photos/${index}.jpg`,
   description: `${getRandomArrayElement(DESCRIPTION_ADVERB) } ${ getRandomArrayElement(DESCRIPTION_VERB)}`,
   likes: GET_RANDOM_NUMBER(15, 200),
   comments: GET_RANDOM_NUMBER(0, 200),
 });
 
-const GET_DESCRIPTION_FOTOS = () => {
-  const arrayDescriptionFotos = [];
-  for (let i = 1; i <= 25; i++) {
-    arrayDescriptionFotos.push(createDescriptionFoto(i));
-  }
-  return arrayDescriptionFotos;
-};
-
-
-export {GET_DESCRIPTION_FOTOS};
+export {COMMENT_LENGTH, createDescriptionFoto, GET_RANDOM_NUMBER};
