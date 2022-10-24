@@ -1,5 +1,5 @@
 // https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Math/random
-
+const FOTOS = 25;
 const GET_RANDOM_NUMBER = function (min, max) {
   if (min === max || min > max) {
     return NaN;
@@ -20,16 +20,60 @@ const GET_RANDOM_NUMBER = function (min, max) {
 };
 
 const COMMENT_LENGTH = function (comment, maxLength) {
-  if(typeof comment === 'string') {
-    if (comment.length <= maxLength) {
-      return true;
-    } else {
-      return false;
-    }
-  } else {
-    return false;
+  if(typeof comment === 'string' && comment.length <= maxLength) {
+    return true;
   }
+  return false;
 };
 
-GET_RANDOM_NUMBER();
 COMMENT_LENGTH();
+
+const DESCRIPTION_ADVERB = [
+  'Невероятно',
+  'Восхитительно',
+  'Классно',
+  'Замечательно',
+  'Необычно',
+  'Странно'
+];
+
+const DESCRIPTION_VERB = [
+  'посидели',
+  'отдохнули',
+  'встретились',
+  'погуляли',
+  'поиграли',
+  'покатались',
+];
+
+const getRandomArrayElement = (elements) => elements[GET_RANDOM_NUMBER(0, elements.length - 1)];
+
+
+const createDescriptionFoto = (index) => ({
+  id: index,
+  url: `photos/${index}.jpg`,
+  description: `${getRandomArrayElement(DESCRIPTION_ADVERB) } ${ getRandomArrayElement(DESCRIPTION_VERB)}`,
+  likes: GET_RANDOM_NUMBER(15, 200),
+  comments: GET_RANDOM_NUMBER(0, 200),
+});
+
+const getFotos = function () {
+  const arrayDescription = [];
+  while (arrayDescription.length < FOTOS) {
+    const index = GET_RANDOM_NUMBER(1, 25);
+    let found = false;
+    for (let i = 0; i < arrayDescription.length; i++) {
+      if (arrayDescription[i].id === index) {
+        found = true;
+        break;
+      }
+    }
+    if (!found) {
+      arrayDescription[arrayDescription.length] = createDescriptionFoto(index);
+    }
+  }
+  const sorted = [...arrayDescription].sort((a,b) => a.id - b.id);
+  return sorted;
+};
+
+getFotos();
