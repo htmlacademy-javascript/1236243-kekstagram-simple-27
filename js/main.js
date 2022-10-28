@@ -1,5 +1,2 @@
-import {getFotos} from './data.js';
+import {PICTURES} from './miniatures.js';
 
-const DESCRIPTION_FOTOS = getFotos();
-
-export { DESCRIPTION_FOTOS };
