@@ -1,4 +1,4 @@
-import { PICTURES, PICTURES_FRAGMENT } from './miniatures.js';
+import { MINI_PICTURES } from './miniatures.js';
 
-PICTURES.append(PICTURES_FRAGMENT);
+MINI_PICTURES();
 
