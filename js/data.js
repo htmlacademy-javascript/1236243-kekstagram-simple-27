@@ -20,6 +20,26 @@ const DESCRIPTION_VERB = [
   'покатались',
 ];
 
+const VALUE_FILTER = [
+  'none',
+  'origin', 
+  'chrome',
+  'sepia',
+  'marvin',
+  'phobos',
+  'heat'
+]
+
+const VALUE_EFFECT = [
+  '',
+  'effects__preview--chrome',
+  'effects__preview--sepia',
+  'effects__preview--marvin',
+  'effects__preview--phobos',
+  'effects__preview--heat'
+
+]
+
 
 const getFotos = function () {
   const arrayDescription = [];
@@ -40,4 +60,4 @@ const getFotos = function () {
   return SORTED;
 };
 
-export {getFotos,DESCRIPTION_ADVERB, DESCRIPTION_VERB};
+export {getFotos,DESCRIPTION_ADVERB, DESCRIPTION_VERB, VALUE_FILTER, VALUE_EFFECT};
