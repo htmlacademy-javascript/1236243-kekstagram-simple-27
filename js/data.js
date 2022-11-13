@@ -36,7 +36,7 @@ const VALUE_FILTER = [
   'marvin',
   'phobos',
   'heat'
-]
+];
 
 
 const VALUE_EFFECT = [
@@ -47,7 +47,7 @@ const VALUE_EFFECT = [
   'effects__preview--phobos',
   'effects__preview--heat'
 
-]
+];
 
 
 const getFotos = function () {

@@ -3,6 +3,5 @@ import './form.js';
 import { onListClick } from './form-filter.js';
 
 
-
 MINI_PICTURES();
-onListClick()
+onListClick();
