@@ -1,12 +1,13 @@
 import { isEscapeKey } from './util.js';
 import './form-filter.js';
 
-const form = document.querySelector('.img-upload__form')
-const uploadFile = form.querySelector('#upload-file')
-const imgOverlay = form.querySelector('.img-upload__overlay')
-const buttonClose = form.querySelector('.img-upload__cancel')
+const formIMG = document.querySelector('.img-upload__form')
+const uploadFile = formIMG.querySelector('#upload-file')
+const imgOverlay = formIMG.querySelector('.img-upload__overlay')
+const buttonClose = formIMG.querySelector('.img-upload__cancel')
+const imgPreview = document.querySelector('.img-upload__preview')
 
-// const pristine = new Pristine (form, {
+// const pristine = new Pristine (formIMG, {
 //     classTo: 'img-upload__text',
 //     errorTextParent: 'img-upload__text',
 //     errorTextClass: 'img-upload__text--error-text',
@@ -15,6 +16,7 @@ const buttonClose = form.querySelector('.img-upload__cancel')
 const onFormEscKeydown = (evt) => {
     if (isEscapeKey(evt)) {
         evt.preventDefault()
+        
         closeForm ()
     }
 }
@@ -22,11 +24,16 @@ const onFormEscKeydown = (evt) => {
 function openForm () {
     imgOverlay.classList.remove('hidden')
     document.addEventListener('keydown', onFormEscKeydown)
+    formIMG.reset()
 }
 
 function closeForm () {
     imgOverlay.classList.add('hidden')
+    document.body.classList.remove('modal-open')
+    document.formIMG.reset()
     document.removeEventListener('keydown', onFormEscKeydown)
+    
+
 }
 
 uploadFile.addEventListener('click', (evt)=>{
@@ -37,5 +44,7 @@ uploadFile.addEventListener('click', (evt)=>{
 
 buttonClose.addEventListener('click', ()=>{
     document.querySelector('body').classList.remove('modal-open')
+    
     closeForm()
+    
 })

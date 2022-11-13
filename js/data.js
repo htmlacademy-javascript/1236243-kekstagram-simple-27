@@ -20,9 +20,17 @@ const DESCRIPTION_VERB = [
   'покатались',
 ];
 
+// const VALUE_FILTER = [
+//   {filter: 'none', effect: ''},
+//   {filter: 'chrome', effect: 'effects__preview--chrome'},
+//   {filter: 'sepia', effect: 'effects__preview--sepia'},
+//   {filter: 'marvin', effect: 'effects__preview--marvin'},
+//   {filter: 'phobos', effect: 'effects__preview--phobos'},
+//   {filter: 'heat', effect: 'effects__preview--heat'}
+// ]
+
 const VALUE_FILTER = [
   'none',
-  'origin', 
   'chrome',
   'sepia',
   'marvin',
@@ -30,8 +38,9 @@ const VALUE_FILTER = [
   'heat'
 ]
 
+
 const VALUE_EFFECT = [
-  '',
+  'none',
   'effects__preview--chrome',
   'effects__preview--sepia',
   'effects__preview--marvin',
