@@ -25,4 +25,4 @@ const onListClick = function () {
   });
 };
 
-export { onListClick, valueEffect };
+export { onListClick };

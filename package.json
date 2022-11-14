@@ -26,5 +26,8 @@
   },
   "homepage": "https://github.com/htmlacademy-javascript/1236243-kekstagram-simple-27#readme",
   "main": "index.js",
-  "author": ""
+  "author": "",
+  "dependencies": {
+    "pristinejs": "^0.1.9"
+  }
 }
