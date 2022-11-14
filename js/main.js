@@ -5,6 +5,6 @@ import { onListClick } from './form-filter.js';
 
 MINI_PICTURES();
 onListClick();
-uploadFileFunction()
-buttonCloseFunction()
-formSubmit()
+uploadFileFunction();
+buttonCloseFunction();
+formSubmit();
