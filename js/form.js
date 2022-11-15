@@ -1,5 +1,5 @@
 import { isEscapeKey } from './util.js';
-import './form-filter.js';
+import { showError, showSuccess } from './message.js';
 
 const formIMG = document.querySelector('.img-upload__form');
 const uploadFile = formIMG.querySelector('#upload-file');
@@ -51,9 +51,9 @@ const formSubmit = function () {
     evt.preventDefault();
     const isValid = pristine.validate();
     if (isValid) {
-      formIMG.submit(); // 400 (Bad Request)
+      showSuccess()
     } else {
-      closeForm(); // пока просто закрывает форму, далее сделаю окно с ошибкой
+      showError(); // пока просто закрывает форму, далее сделаю окно с ошибкой
     }
   });
 };
