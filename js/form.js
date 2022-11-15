@@ -51,9 +51,9 @@ const formSubmit = function () {
     evt.preventDefault();
     const isValid = pristine.validate();
     if (isValid) {
-      showSuccess()
+      showSuccess(); //пока не работает
     } else {
-      showError(); // пока просто закрывает форму, далее сделаю окно с ошибкой
+      showError(); // показывает окно пока просто окно
     }
   });
 };

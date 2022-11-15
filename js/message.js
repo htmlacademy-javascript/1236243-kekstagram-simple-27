@@ -6,11 +6,11 @@ const success = templateSuccessElement.cloneNode(true);
 
 
 const showError = function () {
-    document.body.append(error)
-}
+  document.body.append(error);
+};
 
 const showSuccess = function () {
-  document.body.append(success)
-}
+  document.body.append(success);
+};
 
-export {showError, showSuccess}
+export {showError, showSuccess};
