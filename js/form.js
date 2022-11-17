@@ -1,5 +1,5 @@
 import { isEscapeKey } from './util.js';
-import { showError, showSuccess } from './message.js';
+import { showError, showSuccess} from './message.js';
 
 const formIMG = document.querySelector('.img-upload__form');
 const uploadFile = formIMG.querySelector('#upload-file');
@@ -53,10 +53,11 @@ const formSubmit = function () {
     if (isValid) {
       showSuccess(); //пока не работает
     } else {
-      showError(); // показывает окно пока просто окно
+      showError();
+      // показывает окно пока просто окно
     }
   });
 };
 
 
-export {uploadFileFunction, buttonCloseFunction, formSubmit};
+export {uploadFileFunction, buttonCloseFunction, formSubmit, onFormEscKeydown};
