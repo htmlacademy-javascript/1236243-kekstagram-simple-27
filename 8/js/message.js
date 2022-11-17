@@ -12,16 +12,10 @@ const errorButton = error.querySelector('.error__button');
 const closeErrorEsc = (evt) => {
   if (isEscapeKey.evt) {
     evt.preventDefault();
-    closeError ();
+    onClickCloseError ();
   }
 };
 
-
-function closeError () {
-  document.body.removeChild(error);
-  // document.removeEventListener('keydown', closeErrorEsc);
-  document.addEventListener('keydown', onFormEscKeydown);
-}
 
 const showError = function () {
   document.body.append(error);
@@ -31,13 +25,16 @@ const showError = function () {
 
 
 function onClickCloseError () {
-  errorButton.addEventListener('click', closeError);
-}
+  errorButton.addEventListener('click', () => {
+    document.body.removeChild(error);
+  });
+  document.removeEventListener('keydown', closeErrorEsc);
+  document.addEventListener('keydown', onFormEscKeydown);
 
-onClickCloseError();
+}
 
 const showSuccess = function () {
   document.body.append(success);
 };
 
-export {showError, showSuccess};
+export {showError, showSuccess, onClickCloseError};
