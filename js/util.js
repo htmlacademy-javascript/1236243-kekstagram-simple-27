@@ -38,4 +38,6 @@ const createDescriptionFoto = (index) => ({
   comments: GET_RANDOM_NUMBER(0, 200),
 });
 
-export {COMMENT_LENGTH, createDescriptionFoto, GET_RANDOM_NUMBER};
+const isEscapeKey = (evt) => evt.key === 'Escape';
+
+export {COMMENT_LENGTH, createDescriptionFoto, GET_RANDOM_NUMBER, isEscapeKey};
