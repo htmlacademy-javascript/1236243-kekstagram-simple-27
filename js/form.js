@@ -6,6 +6,7 @@ const uploadFile = formIMG.querySelector('#upload-file');
 const imgOverlay = formIMG.querySelector('.img-upload__overlay');
 const buttonClose = formIMG.querySelector('.img-upload__cancel');
 const imgPreview = document.querySelector('.img-upload__preview');
+const valueScale = formIMG.querySelector('.scale__control--value');
 
 
 const pristine = new Pristine(formIMG, {
@@ -14,7 +15,7 @@ const pristine = new Pristine(formIMG, {
 });
 
 const onFormEscKeydown = (evt) => {
-  if (isEscapeKey(evt)) {
+  if (isEscapeKey(evt)){
     evt.preventDefault();
     closeForm ();
   }
@@ -29,7 +30,10 @@ function closeForm () {
   imgOverlay.classList.add('hidden');
   document.body.classList.remove('modal-open');
   imgPreview.className = 'img-upload__preview none';
+  valueScale.value = `${100}%`;
+  imgPreview.removeAttribute('style');
   document.removeEventListener('keydown', onFormEscKeydown);
+
 }
 const uploadFileFunction = function() {
   uploadFile.addEventListener('click', (evt)=>{
@@ -54,10 +58,9 @@ const formSubmit = function () {
       showSuccess(); //пока не работает
     } else {
       showError();
-      // показывает окно пока просто окно
     }
   });
 };
 
 
-export {uploadFileFunction, buttonCloseFunction, formSubmit, onFormEscKeydown};
+export {uploadFileFunction, buttonCloseFunction, formSubmit, onFormEscKeydown, formIMG, imgPreview};
