@@ -10,5 +10,5 @@ uploadFileFunction();
 buttonCloseFunction();
 formSubmit();
 onClickCloseError();
-changeScaleMin()
-changeScaleMax()
+changeScaleMin();
+changeScaleMax();

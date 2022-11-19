@@ -1,4 +1,4 @@
-import {formIMG, imgPreview} from './form.js'
+import {formIMG, imgPreview} from './form.js';
 
 const valueScale = formIMG.querySelector('.scale__control--value');
 const buttonSmaller = formIMG.querySelector('.scale__control--smaller');
@@ -35,5 +35,5 @@ const changeScaleMax = function () {
 
 };
 
-export {changeScaleMin, changeScaleMax}
+export {changeScaleMin, changeScaleMax};
 
