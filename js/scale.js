@@ -5,7 +5,7 @@ const buttonSmaller = formIMG.querySelector('.scale__control--smaller');
 const buttonBigger = formIMG.querySelector('.scale__control--bigger');
 
 const STEP = 25;
-const MIN_SCALE = 0;
+const MIN_SCALE = 25;
 const MAX_STEP = 100;
 
 
