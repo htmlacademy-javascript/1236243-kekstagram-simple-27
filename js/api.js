@@ -10,8 +10,8 @@ const unBlockSubmitButton = () => {
   submitButton.textContent = 'Опубликовать';
 };
 
-const getData = (onSuccees, onFail) => {
-  fetch('https://27.javascript.pages.academy/kekstagram-simple/data',)
+const getData = async (onSuccees, onFail) => {
+  await fetch('https://27.javascript.pages.academy/kekstagram-simple/data',)
     .then((response) => response.json())
     .then((pictures) => {
       onSuccees(pictures);
@@ -20,9 +20,9 @@ const getData = (onSuccees, onFail) => {
     );
 };
 
-const sendData = (onSuccess, onFail, body) => {
+const sendData = async (onSuccess, onFail, body) => {
   blockSubmitButton();
-  fetch(' https://27.javascript.pages.academy/kekstagram-simple', {
+  await fetch('https://27.javascript.pages.academy/kekstagram-simple', {
     method: 'POST',
     body,
   })

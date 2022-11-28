@@ -55,15 +55,14 @@ const buttonCloseFunction = function () {
 };
 
 const formSubmit = function () {
-  formIMG.addEventListener('submit', (evt) => {
+  formIMG.addEventListener('submit', async (evt) => {
     evt.preventDefault();
     const formData = new FormData(evt.target);
     const isValid = pristine.validate();
-    if (isValid) {
-
-      sendData(showSuccess, showError, formData);
-    } else {
+    if (!isValid) {
       showError();
+    } else {
+      await sendData(showSuccess, showError, formData);
     }
   });
 };
